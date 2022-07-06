@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/34b9bc8a79.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Coding Quiz</title>
+</head>
+
+<body>
+
+    <!--Navbar STARTS-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light mb-4">
+        <a class="navbar-brand" href="highscore.html" >View Highscores</a>
+        <div class="navbar-collapse" id="navbartext"></div>
+        </nav>
+    </header>
+    <!--Navbar ENDS-->
+
+    <!--Quiz text STARTS-->
+    <main>
+        <section id="start" class="quiz-section">
+            <h1>Coding Quiz Challenge</h1>
+            <p class="card-text">
+              Try to answer the following code-related question within the time limit. 
+                 <br>
+              keep in mind that incorrect answers will penalize your score/time 
+                 <br>
+              by ten seconds !
+            </p>
+        </section>
+
+        <section id="quiz-questions" class="hidden quiz-section">
+
+            <p id="timer">Time: <span id="time-remaining">0</span></p>
+
+            <h1 id="question">Quiz Question</h1>
+
+            <ul id="choices"></ul>
+        </section>
+
+        <section id="end" class="quiz-section hidden">
+            <h1 id="end-title">Quiz Completed</h1>
+            <p id="score-text">You scored: <span id="score">0</span></p>
+
+        </section>
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+</body>
+
+
+</html>
