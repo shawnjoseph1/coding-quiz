@@ -22,7 +22,7 @@
     </header>
     <!--Navbar ENDS-->
 
-    <!--Quiz text STARTS-->
+    <!--Quiz text/buttons STARTS-->
     <main>
         <section id="start" class="quiz-section">
             <h1>Coding Quiz Challenge</h1>
@@ -45,25 +45,30 @@
         </section>
 
         <section id="end" class="quiz-section hidden">
+
             <h1 id="end-title">Quiz Completed</h1>
             <p id="score-text">You scored: <span id="score">0</span></p>
+            <form id="submit-score">
 
+                <label for="initials">Enter initials:</label>
+                <input type="text" id="initials">
+                <button type="submit"> Submit</button>
+                <p id="error-message"></p>
+            </form>
+            <!--Quiz text/buttons ENDS-->
+
+            <!--Correct/Wrong answers prompt STARTS-->
+            <a href="index.html" class="back-button"><i class="fas fa-angle-left" aria-hidden="true"></i>Back to quiz</a>
         </section>
 
-
-
-
-
-
-
+        <div>
+            <p id="correct" class="choice-status hidden"><i aria-hidden="true"></i>Correct!</p>
+            <p id="wrong" class="choice-status hidden"><i aria-hidden="true"></i>Wrong!</p>
+        </div>
+        <!--Correct/Wrong answers prompt ENDS-->
     </main>
 
 
-
-
-
-
+    <script src="./assets/js/script.js"></script>
 </body>
-
-
 </html>
