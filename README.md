@@ -27,7 +27,7 @@ THEN I can save my initials and score
 ```
 
 
-![code quiz](codingquiz.gif)
+![code quiz](./assets/images/codingquiz.gif)
 
 ### Review
 
