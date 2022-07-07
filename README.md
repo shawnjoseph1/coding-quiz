@@ -31,11 +31,7 @@ THEN I can save my initials and score
 
 ### Review
 
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+* The URL of the functional, deployed application (https://shawnjoseph1.github.io/coding-quiz/)
 
 - - -
 
