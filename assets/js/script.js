@@ -26,16 +26,11 @@ class Question {
     }
 }
 
-const QUESTION_1 = new Question("Commonly used data types DO NOT include: ", 
-  ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-const QUESTION_2 = new Question("The condition in an if / else statement is enclosed within ____.", 
-  ["Quotes", "Curly brackets", "Parentheses", "Square brackets"], 2);
-const QUESTION_3 = new Question("Arrays in JavaScript can be used to store ____.", 
-  ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-const QUESTION_4 = new Question("String values must be enclosed within _____ when being assigned to variables.", 
-  ["Commas", "Curly brackets", "Quotes", "Parentheses"], 2);
-const QUESTION_5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
-  ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
+const QUESTION_1 = new Question("Commonly used data types DO NOT include: ", ["strings", "booleans", "alerts", "numbers"], 2);
+const QUESTION_2 = new Question("The condition in an if/else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], 2);
+const QUESTION_3 = new Question("Arrays in JavaScript can be used to store ____.", ["numbers and strings", "other arrays", "booleans", "all of the above"], 3);
+const QUESTION_4 = new Question("String values must be enclosed within ____ when being assigned to variables.", ["commas", "curly brackets", "quotes", "parentheses"], 2);
+const QUESTION_5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", ["JavaScript", "terminal/bash", "for loops", "console.log"], 3);
 const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5];
 
 let currentQuestion = 0;
@@ -121,11 +116,21 @@ function processChoice(event) {
     getNextQuestion();
   }
 
-//show the choices
+//show the choices again after user chooses wrong answer
 function resetChoiceStatusEffects() {
     clearTimeout(choiceStatusTimeout);
-    styleTimeRemainingDefault();
+    hideElement(CORRECT);
+    hideElement(WRONG);
 }
+
+
+displayScores();
+
+function resetGame() {
+    localStorage.removeItem("scores");
+    location.reload();
+}
+
 
 function styleTimeRemainingDefault() {
    
@@ -247,8 +252,9 @@ function displayFormError(errorMessage) {
 function saveHighscoreEntry(highscoreEntry) {
     const currentScores = getScoreList();
     placeEntryInHighscoreList(highscoreEntry, currentScores);
-    localStorage.setItem('scoreList', JSON.stringify(currentScores));
+    localStorage.setItem("scoreList", JSON.stringify(currentScores));
 }
+
 
 function getScoreList() {
     const currentScores = localStorage.getItem('scoreList');
@@ -265,12 +271,12 @@ function placeEntryInHighscoreList(newEntry, scoreList) {
 }
 
 function getNewScoreIndex(newEntry, scoreList) {
-    if (scoreList.length > 0) {
-        for (let i = 0; i < scoreList.length; i++) {
-            if (scoreList[i].score <= newEntry.score) {
-                return i;
-            }
+    let newScoreIndex = scoreList.length;
+    for (let i = 0; i < scoreList.length; i++) {
+        if (newEntry.score > scoreList[i].score) {
+            newScoreIndex = i;
+            break;
         }
     }
-    return scoreList.length;
+    return newScoreIndex;
 }

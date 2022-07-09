@@ -4,7 +4,7 @@ html {
 
 /* page font */
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    font-family: system-ui, 
     "Segoe UI", "Roboto", "Oxygen", "Droid Sand", "Ubuntu", "Cantarell", 
     "Fira Sans", "Helvetica Neue", sans-serif;
     color: #202020;
@@ -20,12 +20,6 @@ h1 {
 a {
     color: #88115b;
     text-decoration: none;
-}
-
-a:hover,
-a:active,
-a:focus {
-    color: #88115b;
 }
 
 .fas {
@@ -45,16 +39,6 @@ button,
     font-size: 1em;
     text-align: center;
     transition: background-color 0.2s ease-in-out;
-}
-
-.back-button:hover,
-.back-button:focus,
-.back-button:active
-button:hover,
-button:focus,
-button:active {
-    background-color: #88115b;
-    color: #fff;
 }
 
 .back-button {
